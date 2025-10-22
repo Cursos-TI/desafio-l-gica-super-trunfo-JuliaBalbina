@@ -12,7 +12,7 @@ int main() {
         unsigned long int populacao, populacao2;
         char cidade[20], cidade2[20];
         float area, area2, pib, pib2, densidade, densidade2, percapita, percapita2, superpoder, superpoder2;
-        int codigo, codigo2, pontosturisticos, pontosturisticos2;
+        int codigo, codigo2, pontosturisticos, pontosturisticos2, opcao;
 
     // Cadastro das Cartas:
     printf("BEM VINDO AO SUPER TRUNFO!");
@@ -60,18 +60,81 @@ int main() {
 
 
     // Comparação de Cartas:
-        printf("\n\nComparando a população!\n");
-
-        if (populacao > populacao2) {
-            printf("\nPopulação de %s = %lu", cidade, populacao);
-            printf("\nPopulação de %s = %lu", cidade2, populacao2);
-            printf("\n%s venceu!", cidade);
+        printf("\n\nEscolha um dos atributos para comparar as cartas:\n");
+        printf("\n1) População;");
+        printf("\n2) Área;");
+        printf("\n3) PIB;");
+        printf("\n4) Pontos Turísticos;");
+        printf("\n5) Densidade (o menor valor ganha);");
+        printf("\n6) PIB per capita;");
+        printf("\n7) Super-Poder;\n");
+        scanf("%d", &opcao);
+        
+        if (opcao == 1){
+            printf("\nComparando a população:\n");
+            printf("\n%s = %lu", cidade, populacao);
+            printf("\n%s = %lu", cidade2, populacao2);
+                if (populacao > populacao2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        }else if (opcao == 2) {
+            printf("\nComparando a área:\n");
+            printf("\n%s = %f", cidade, area);
+            printf("\n%s = %f", cidade2, area2);
+                if (area > area2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        }else if (opcao == 3) {
+            printf("\nComparando o PIB:\n");
+            printf("\n%s = %f", cidade, pib);
+            printf("\n%s = %f", cidade2, pib2);
+                if (pib > pib2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        }else if (opcao == 4) {
+            printf("\nComparando a quatidade de pontos turísticos:\n");
+            printf("\n%s = %d", cidade, pontosturisticos);
+            printf("\n%s = %d", cidade2, pontosturisticos2);
+                if (pontosturisticos > pontosturisticos2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        }else if (opcao == 5) {
+            printf("\nComparando a densidade:\n");
+            printf("\n%s = %f", cidade, densidade);
+            printf("\n%s = %f", cidade2, densidade2);
+                if (densidade < densidade2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        }else if (opcao == 6) {
+            printf("\nComparando o PIB per capita:\n");
+            printf("\n%s = %f", cidade, percapita);
+            printf("\n%s = %f", cidade2, percapita2);
+                if (percapita > percapita2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
+        } else {
+            printf("\nComparando o super-poder:\n");
+            printf("\n%s = %f", cidade, superpoder);
+            printf("\n%s = %f", cidade2, superpoder2);
+                if (superpoder > superpoder2){
+                    printf("\n%s venceu!\n", cidade);
+                 } else {
+                    printf("\n%s venceu!\n", cidade2);
+                 }
         }
-        else {
-            printf("\nPopulação de %s = %lu", cidade, populacao);
-            printf("\nPopulação de %s = %lu", cidade2, populacao2);
-            printf("\n\n%s venceu!", cidade2);
-        }
 
+        
     return 0;
 }
